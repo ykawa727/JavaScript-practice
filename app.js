@@ -43,14 +43,16 @@
 
 // alert('1から10まで足し算した結果は' + num + 'です');
 
-let int1 = 2 + 7;
-alert('2+7=' + int1);
+// let int1 = 2 + 7;
+// alert('2+7=' + int1);
 
-let int2 = 7 - 2;
-alert('7-2=' + int2);
+// let int2 = 7 - 2;
+// alert('7-2=' + int2);
 
-let int3 = 2 * 7;
-alert('2*7=' + int3);
+// let int3 = 2 * 7;
+// alert('2*7=' + int3);
 
-let int4 = 7 / 2;
-alert('7/2=' + int4);
+// let int4 = 7 / 2;
+// alert('7/2=' + int4);
+
+
