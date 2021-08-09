@@ -77,16 +77,79 @@
 
 // alert ('あなたの選んだ手は' + user_hand + 'です。');
 
-function getJShand(){
-  let js_hand_num = Math.floor(Math.random()*3);
+// function getJShand(){
+//   let js_hand_num = Math.floor(Math.random()*3);
 
-  if(js_hand_num == 0){
-    js_hand = 'グー';
-  } else if(js_hand_num == 1){
-    js_hand = 'チョキ';
-  } else if(js_hand_num == 2){
-    js_hand = 'パー';
+//   if(js_hand_num == 0){
+//     js_hand = 'グー';
+//   } else if(js_hand_num == 1){
+//     js_hand = 'チョキ';
+//   } else if(js_hand_num == 2){
+//     js_hand = 'パー';
+//   }
+
+//   return js_hand;
+// }
+
+let user_hand = prompt("じゃんけんの手をグー、チョキ、パーから選んでください。");
+  while((user_hand != "グー") && (user_hand != "チョキ") &&　(user_hand != "パー") &&　(user_hand != null)){
+    alert("グー・チョキ・パーのいずれかを入力してください");
+    user_hand = prompt("じゃんけんの手をグー、チョキ、パーから選んでください。");
   }
 
-  return js_hand;
+let js_hand = getJShand();
+
+let judge = WinLose(user_hand, js_hand);
+
+if(user_hand != null){
+  alert("あなたの選んだ手は" + user_hand + "です。\nJavaScriptの選んだ手は" + js_hand + "です。\n結果は" + judge + "です。");
+} else {
+  alert("またチャレンジしてね")
+}
+
+function getJShand(){
+  let js_hand_num = Math.floor( Math.random() * 3 );
+  let hand_name;
+
+  if(js_hand_num == 0){
+    hand_name = "グー";
+  } else if(js_hand_num == 1){
+    hand_name = "チョキ";
+  } else if(js_hand_num == 2){
+    hand_name = "パー";
+  }
+
+  return hand_name;
+}
+
+function WinLose(user,js){
+  let WinLoseStr;
+
+  if(user == "グー"){
+    if(js == "グー"){
+      WinLoseStr = "あいこ";
+    } else if(js == "チョキ"){
+      WinLoseStr = "勝ち";
+    } else if(js == "パー"){
+      WinLoseStr = "負け";
+    }
+  } else if(user == "チョキ"){
+    if(js == "グー"){
+      WinLoseStr = "負け";
+    } else if(js == "チョキ"){
+      WinLoseStr = "あいこ";
+    } else if(js == "パー"){
+      WinLoseStr = "勝ち";
+    }
+  }　else if(user == "パー"){
+    if(js == "グー"){
+      WinLoseStr = "勝ち";
+    } else if(js == "チョキ"){
+      WinLoseStr = "負け";
+    } else if(js == "パー"){
+      WinLoseStr = "あいこ";
+    }
+  }
+
+  return WinLoseStr;
 }
